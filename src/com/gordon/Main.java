@@ -25,5 +25,19 @@ public class Main {
     sneaker.updateStock(0);
     sneaker.subscribe(emailObserver);
     sneaker.updateStock(10);
+    sneaker.updatePrice(10);
+
+    Wheels wheels = new Wheels(10);
+    Trucks trucks = new Trucks(20);
+    trucks.addPart(wheels);
+    trucks.addPart(wheels);
+
+    Deck deck = new Deck(50);
+    deck.addPart(trucks);
+    deck.addPart(trucks);
+
+    System.out.printf("%nTotal value of skateboard: %d%n", deck.getTotalValue());
+    SalesTaxService salesTaxService = SalesTaxService.getInstance();
+    System.out.printf("Price after tax of skateboard: %f%n", salesTaxService.getPriceWithTax(Province.ALBERTA, deck.getTotalValue()));
   }
 }

@@ -1,24 +1,31 @@
 package com.gordon.subject;
 
 import com.gordon.Message;
+import com.gordon.PriceMessage;
+import com.gordon.StockMessage;
 import com.gordon.observer.Observer;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class Sneaker implements Subject {
+public class Sneaker extends Product implements Subject {
   List<Observer> observerList;
-  List<Integer> stockHistory;
 
   public Sneaker() {
+    super();
     this.observerList = new ArrayList<>();
-    this.stockHistory = new ArrayList<>();
-    this.stockHistory.add(0);
   }
 
+  @Override
   public void updateStock(int newStock) {
-    this.stockHistory.add(newStock);
-    notifyObservers();
+    super.updateStock(newStock);
+    notifyObservers(new StockMessage(this.stockLevel));
+  }
+
+  @Override
+  public void updatePrice(int newPrice) {
+    super.updatePrice(newPrice);
+    notifyObservers(new PriceMessage(this.price));
   }
 
   @Override
