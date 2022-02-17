@@ -39,10 +39,7 @@ public class Sneaker extends Product implements Subject {
   }
 
   @Override
-  public void notifyObservers() {
-    observerList.forEach(observer -> {
-      Message message = new Message(String.format("New stock level: %s\n\tPrevious stock level: %s\n", stockHistory.get(stockHistory.size() - 1), stockHistory.get(stockHistory.size() - 2)));
-      observer.update(message);
-    });
+  public void notifyObservers(Message message) {
+    observerList.forEach(observer -> observer.update(message));
   }
 }

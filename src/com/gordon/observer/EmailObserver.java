@@ -11,6 +11,6 @@ public class EmailObserver implements Observer {
 
   @Override
   public void update(Message message) {
-    System.out.printf("\nSent an email to %s with message:\n\t%s", email, message.getMessage());
+    System.out.printf("%nSent an email to %s with message:%n\t%s", email, message.generateMessage());
   }
 }

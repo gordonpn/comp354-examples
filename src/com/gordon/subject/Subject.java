@@ -1,5 +1,6 @@
 package com.gordon.subject;
 
+import com.gordon.Message;
 import com.gordon.observer.Observer;
 
 public interface Subject {
@@ -7,5 +8,5 @@ public interface Subject {
 
   void unsubscribe(Observer observer);
 
-  void notifyObservers();
+  void notifyObservers(Message message);
 }
