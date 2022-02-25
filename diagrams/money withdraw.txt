@@ -1,0 +1,74 @@
+title Money withdraw
+
+actor Customer
+participant UI
+participant Controller
+participant Auth
+participant Account
+actor Bank Server
+database LocalDatabase
+participant Money Dispenser
+participant Transaction
+participant Receipt Printer
+
+Customer->UI: enter card
+activate Customer
+activate UI
+activate Controller
+UI->Customer: request pin
+Customer->UI: enter pin
+note left of Controller: controller pattern
+UI->Controller: verify card and pin
+note left of Auth: pure fabrication / information expert
+Controller->Auth: authenticate
+activate Auth
+Auth->Bank Server: verify card and pin
+activate Bank Server
+alt cannot verify
+Auth<-Bank Server: cannot verify
+Controller<-Auth: cannot verify
+Controller->UI: show error
+end
+Bank Server->Auth: validated
+deactivate Bank Server
+Auth->Controller: customer validated
+deactivate Auth
+note left of Account: information expert
+Controller->Account: lookup customer info
+activate Account
+Account->LocalDatabase: lookup customer info
+activate LocalDatabase
+LocalDatabase->Account: customer info
+note right of Account: creator pattern
+deactivate LocalDatabase
+Account->Controller: customer accounts
+deactivate Account
+Controller->UI: show account options
+Customer->UI: select account
+UI->Customer: request amount
+Customer->UI: enter amount
+UI->Controller: withdraw amount
+note right of Controller: indirection
+Controller->Account: verify sufficient funds
+activate Account
+Account->Controller: user has sufficient funds
+deactivate Account
+Controller->Money Dispenser: dispense money
+activate Money Dispenser
+Controller->Transaction: create a transaction
+note right of Controller: creator pattern
+activate Transaction
+Controller->UI: transaction completed
+deactivate Controller
+note left of Transaction: information expert
+Transaction->Bank Server: record transaction
+Transaction->Receipt Printer: print transaction receipt
+deactivate Transaction
+activate Receipt Printer
+Money Dispenser->Customer: dispense money
+deactivate Money Dispenser
+Receipt Printer->Customer: print receipt
+deactivate Receipt Printer
+UI->Customer: return card
+deactivate UI
+deactivate Customer

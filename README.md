@@ -21,3 +21,11 @@ DTO: data transfer object (like a POJO, etc). DAO: data access object
 [COMP 354 Tutorial Week 5 - Git (section PA)](https://youtu.be/NtS0wn1l8DI)
 
 _[Slides shown in recording](https://docs.google.com/presentation/d/10PbaKSCvAKSbZQHZ2NzhvvFFV38K3PZKLm-4emTo9LA/edit?usp=sharing)_
+
+[COMP 354 Lab Week 6 - Singleton, Composite patterns - Associations](https://youtu.be/yv-RtSZX1ho)
+
+[COMP 354 Tutorial Week 6 - Design patterns, GRASP, GitHub, Sprint concepts](https://youtu.be/0pgvzedYjB4)
+
+[COMP 354 Lab Week 7 - Midterm Prep](https://youtu.be/l5SBtqPaTdQ)
+
+[COMP 354 Tutorial Week 7 - Adapter/Strategy patterns implementation](https://youtu.be/dNsqqfmX5Jg)
