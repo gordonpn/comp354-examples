@@ -11,7 +11,6 @@ public class SmsObserver implements Observer {
 
   @Override
   public void update(Message message) {
-//    import a library to send text messages
     System.out.printf("%nSent SMS to %s with message: %n\t%s", phoneNumber, message.generateMessage());
   }
 }
