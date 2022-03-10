@@ -29,3 +29,5 @@ _[Slides shown in recording](https://docs.google.com/presentation/d/10PbaKSCvAKS
 [COMP 354 Lab Week 7 - Midterm Prep](https://youtu.be/l5SBtqPaTdQ)
 
 [COMP 354 Tutorial Week 7 - Adapter/Strategy patterns implementation](https://youtu.be/dNsqqfmX5Jg)
+
+[COMP 354 Lab Week 9 - Midterm review](https://youtu.be/Dea-ADE1G68)
