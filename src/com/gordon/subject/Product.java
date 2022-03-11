@@ -9,6 +9,10 @@ public class Product {
     this.stockLevel = new StockLevel();
   }
 
+  public Price getPrice() {
+    return price;
+  }
+
   public void updateStock(int newStock) {
     this.stockLevel.add(newStock);
   }

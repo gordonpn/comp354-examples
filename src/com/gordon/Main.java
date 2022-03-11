@@ -6,8 +6,11 @@ import com.gordon.adapter.SalesTax;
 import com.gordon.observer.EmailObserver;
 import com.gordon.observer.SmsObserver;
 import com.gordon.pipeline.Pipeline;
+import com.gordon.pipeline.filter.DiscountFilter;
 import com.gordon.pipeline.filter.LetterFilter;
+import com.gordon.pipeline.filter.ProductToDoubleFilter;
 import com.gordon.pipeline.filter.SpaceFilter;
+import com.gordon.pipeline.filter.TaxesFilter;
 import com.gordon.service.SalesTaxService;
 import com.gordon.service.external.IntlSalesTaxService;
 import com.gordon.strategy.CanadaStrategy;
@@ -15,6 +18,7 @@ import com.gordon.strategy.CountryStrategy;
 import com.gordon.strategy.Province;
 import com.gordon.strategy.States;
 import com.gordon.strategy.UnitedStatesStrategy;
+import com.gordon.subject.Product;
 import com.gordon.subject.Sneaker;
 import com.gordon.subject.skateboard.Deck;
 import com.gordon.subject.skateboard.Trucks;
@@ -28,25 +32,8 @@ public class Main {
     //    Deck deck = new Main().compositeExample();
     //
     //    new Main().adapterExample(deck);
-
-    String input = "1234 asdf 1234";
-    Pipeline<String, String> pipeline = new Pipeline<>(new SpaceFilter());
-    pipeline = pipeline.addPipe(new LetterFilter());
-
-    String output = pipeline.process(input);
-
-    System.out.println(output);
-
-    //    System.out.println(input.replaceAll("\\s", "").replaceAll("[a-zA-Z]*", ""));
-    //
-    //    String streamOutput =
-    //        input
-    //            .chars()
-    //            .filter(Character::isDigit)
-    //            .mapToObj(val -> (char) val)
-    //            .map(String::valueOf)
-    //            .collect(Collectors.joining());
-    //    System.out.println(streamOutput);
+    //    new Main().pipelineExample();
+    new Main().pipelineProductExample();
   }
 
   private void adapterExample(Deck deck) {
@@ -99,5 +86,39 @@ public class Main {
     deck.addPart(trucks);
 
     return deck;
+  }
+
+  private void pipelineExample() {
+    String input = "1234 asdf 1234";
+    Pipeline<String, String> pipeline = new Pipeline<>(new SpaceFilter());
+    pipeline = pipeline.addPipe(new LetterFilter());
+
+    String output = pipeline.process(input);
+
+    System.out.println(output);
+
+    //    System.out.println(input.replaceAll("\\s", "").replaceAll("[a-zA-Z]*", ""));
+    //
+    //    String streamOutput =
+    //        input
+    //            .chars()
+    //            .filter(Character::isDigit)
+    //            .mapToObj(val -> (char) val)
+    //            .map(String::valueOf)
+    //            .collect(Collectors.joining());
+    //    System.out.println(streamOutput);
+
+  }
+
+  private void pipelineProductExample() {
+    Sneaker sneaker = new Sneaker();
+    sneaker.updatePrice(20);
+
+    Pipeline<Product, Double> pipeline =
+        new Pipeline<>(new ProductToDoubleFilter())
+            .addPipe(new DiscountFilter(70))
+            .addPipe(new TaxesFilter(0.15));
+
+    System.out.println(pipeline.process(sneaker));
   }
 }
