@@ -1,8 +1,8 @@
 package com.gordon.subject;
 
-import com.gordon.Message;
-import com.gordon.PriceMessage;
-import com.gordon.StockMessage;
+import com.gordon.message.Message;
+import com.gordon.message.PriceMessage;
+import com.gordon.message.StockMessage;
 import com.gordon.observer.Observer;
 
 import java.util.ArrayList;

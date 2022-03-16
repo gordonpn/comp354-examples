@@ -1,4 +1,4 @@
-package com.gordon;
+package com.gordon.message;
 
 import com.gordon.subject.StockLevel;
 
@@ -11,6 +11,8 @@ public class StockMessage implements Message {
 
   @Override
   public String generateMessage() {
-    return String.format("New stock level: %s%n\tPrevious stock level: %s%n", this.stockLevel.getCurrentStock(), this.stockLevel.getPreviousStock());
+    return String.format(
+        "New stock level: %s%n\tPrevious stock level: %s%n",
+        this.stockLevel.getCurrentStock(), this.stockLevel.getPreviousStock());
   }
 }

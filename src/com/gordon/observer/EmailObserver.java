@@ -1,6 +1,6 @@
 package com.gordon.observer;
 
-import com.gordon.Message;
+import com.gordon.message.Message;
 
 public class EmailObserver implements Observer {
   private final String email;
@@ -11,6 +11,7 @@ public class EmailObserver implements Observer {
 
   @Override
   public void update(Message message) {
-    System.out.printf("%nSent an email to %s with message:%n\t%s", email, message.generateMessage());
+    System.out.printf(
+        "%nSent an email to %s with message:%n\t%s", email, message.generateMessage());
   }
 }

@@ -1,6 +1,6 @@
 package com.gordon.observer;
 
-import com.gordon.Message;
+import com.gordon.message.Message;
 
 public class SmsObserver implements Observer {
   private final String phoneNumber;
@@ -11,6 +11,7 @@ public class SmsObserver implements Observer {
 
   @Override
   public void update(Message message) {
-    System.out.printf("%nSent SMS to %s with message: %n\t%s", phoneNumber, message.generateMessage());
+    System.out.printf(
+        "%nSent SMS to %s with message: %n\t%s", phoneNumber, message.generateMessage());
   }
 }

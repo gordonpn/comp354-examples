@@ -1,6 +1,6 @@
 package com.gordon.subject;
 
-import com.gordon.Message;
+import com.gordon.message.Message;
 import com.gordon.observer.Observer;
 
 public interface Subject {

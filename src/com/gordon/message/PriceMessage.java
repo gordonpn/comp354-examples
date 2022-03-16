@@ -1,4 +1,4 @@
-package com.gordon;
+package com.gordon.message;
 
 import com.gordon.subject.Price;
 
@@ -11,6 +11,8 @@ public class PriceMessage implements Message {
 
   @Override
   public String generateMessage() {
-    return String.format("New price: %s%n\tAll time lowest price: %s%n", this.price.getCurrentPrice(), this.price.getLowestPrice());
+    return String.format(
+        "New price: %s%n\tAll time lowest price: %s%n",
+        this.price.getCurrentPrice(), this.price.getLowestPrice());
   }
 }
