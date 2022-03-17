@@ -22,4 +22,9 @@ public class Price {
   public int getCurrentPrice() {
     return this.priceHistory.get(this.priceHistory.size() - 1);
   }
+
+  @Override
+  public String toString() {
+    return "Price{" + "priceHistory=" + priceHistory + '}';
+  }
 }

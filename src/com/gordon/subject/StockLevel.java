@@ -22,4 +22,9 @@ public class StockLevel {
   public int getPreviousStock() {
     return stockHistory.get(stockHistory.size() - 2);
   }
+
+  @Override
+  public String toString() {
+    return "StockLevel{" + "stockHistory=" + stockHistory + '}';
+  }
 }

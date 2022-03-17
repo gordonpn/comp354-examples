@@ -14,7 +14,5 @@ public class CompositeExample {
     Deck deck = new Deck(50);
     deck.addPart(trucks);
     deck.addPart(trucks);
-
-    return deck;
   }
 }

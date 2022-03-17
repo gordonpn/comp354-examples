@@ -42,4 +42,16 @@ public class Sneaker extends Product implements Subject {
   public void notifyObservers(Message message) {
     observerList.forEach(observer -> observer.update(message));
   }
+
+  @Override
+  public String toString() {
+    return "Sneaker{"
+        + "price="
+        + price
+        + ", stockLevel="
+        + stockLevel
+        + ", observerList="
+        + observerList
+        + '}';
+  }
 }

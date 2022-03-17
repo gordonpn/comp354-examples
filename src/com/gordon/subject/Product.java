@@ -20,4 +20,9 @@ public class Product {
   public void updatePrice(int newPrice) {
     this.price.add(newPrice);
   }
+
+  @Override
+  public String toString() {
+    return "Product{" + "price=" + price + ", stockLevel=" + stockLevel + '}';
+  }
 }
