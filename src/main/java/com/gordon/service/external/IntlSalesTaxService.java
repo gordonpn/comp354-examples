@@ -11,6 +11,6 @@ public class IntlSalesTaxService {
         || europeanCountry.equalsIgnoreCase("denmark")) {
       return 25.0;
     }
-    throw new UnsupportedOperationException();
+    throw new UnsupportedOperationException(europeanCountry + " not supported");
   }
 }

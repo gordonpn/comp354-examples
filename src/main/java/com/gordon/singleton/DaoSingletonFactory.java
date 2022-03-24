@@ -6,6 +6,10 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class DaoSingletonFactory {
+  private DaoSingletonFactory() {
+    // prevent instantiation
+  }
+
   private static Map<String, ProductRepository> repositories;
 
   public static ProductRepository getInstance(String repositoryName) {
