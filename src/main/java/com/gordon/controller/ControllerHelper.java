@@ -2,6 +2,8 @@ package com.gordon.controller;
 
 import com.sun.net.httpserver.HttpExchange;
 
+import java.io.IOException;
+import java.io.OutputStream;
 import java.net.URI;
 import java.nio.charset.StandardCharsets;
 import java.text.SimpleDateFormat;
@@ -34,6 +36,10 @@ public class ControllerHelper {
   }
 
   public static void logResponse(HttpExchange exchange) {
+    logResponse(exchange, System.out);
+  }
+
+  public static void logResponse(HttpExchange exchange, OutputStream output) {
     String isoDatePattern = "yyyy-MM-dd'T'HH:mm:ssZ";
 
     SimpleDateFormat simpleDateFormat = new SimpleDateFormat(isoDatePattern);
@@ -43,6 +49,11 @@ public class ControllerHelper {
     URI requestURI = exchange.getRequestURI();
     String query = requestURI.getQuery();
 
-    System.out.printf("%n%s %s %s %s", dateString, requestMethod, requestURI, query);
+    try {
+      output.write(
+          String.format("%n%s %s %s %s", dateString, requestMethod, requestURI, query).getBytes());
+    } catch (IOException e) {
+      System.err.println("Could not write to Output Stream: " + e.getMessage());
+    }
   }
 }

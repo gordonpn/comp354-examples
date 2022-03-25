@@ -38,6 +38,8 @@ _[Git slides](https://docs.google.com/presentation/d/10PbaKSCvAKSbZQHZ2NzhvvFFV3
 
 [COMP 354 Tutorial Week 10 - Software Testing](https://youtu.be/o-QsuxQXOJ8)
 
-_[Software Testing slides](https://docs.google.com/presentation/d/1SyqV9aejTdqURAJXokGYaZ9lN0C8hh8OF0QMS3LEvcA/edit?usp=sharing)
+\_[Software Testing slides](https://docs.google.com/presentation/d/1SyqV9aejTdqURAJXokGYaZ9lN0C8hh8OF0QMS3LEvcA/edit?usp=sharing)
 
-[COMP 354 Lab Week 11 - JUnit](https://youtu.be/6fo9u85J-sw)
+[COMP 354 Lab Week 11 - JUnit unit testing](https://youtu.be/6fo9u85J-sw)
+
+[COMP 354 Tutorial Week 11 - Mockito (mocking, stubbing, etc)](https://youtu.be/_d2iBi4OTqE)

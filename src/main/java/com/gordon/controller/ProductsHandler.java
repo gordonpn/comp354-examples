@@ -17,6 +17,10 @@ import static com.gordon.view.ProductView.render;
 public class ProductsHandler implements HttpHandler {
   ProductRepository productRepository;
 
+  public ProductsHandler(ProductRepository productRepository) {
+    this.productRepository = productRepository;
+  }
+
   public ProductsHandler() {
     productRepository = DaoSingletonFactory.getInstance("products");
   }
@@ -51,7 +55,7 @@ public class ProductsHandler implements HttpHandler {
     render(exchange, String.valueOf(products));
   }
 
-  private void handleOneProduct(HttpExchange exchange, String name) throws IOException {
+  void handleOneProduct(HttpExchange exchange, String name) throws IOException {
     Product product = productRepository.getByName(name);
     render(exchange, String.valueOf(product));
   }
