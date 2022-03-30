@@ -16,6 +16,8 @@
     <mockito.version>4.4.0</mockito.version>
     <hamcrest.version>1.3</hamcrest.version>
     <jacoco.skip>false</jacoco.skip>
+    <sonar.organization>gordonpn</sonar.organization>
+    <sonar.host.url>https://sonarcloud.io</sonar.host.url>
   </properties>
 
   <dependencies>
