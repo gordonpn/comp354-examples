@@ -83,7 +83,7 @@ class ProductsHandlerTest {
     controllerHelper.verify(() -> logResponse(exchange), times(1));
   }
 
-  // @Disabled
+  @Disabled
   @Test
   void logOutputTest() {
     HttpExchange exchange = mock(HttpExchange.class);
@@ -101,7 +101,7 @@ class ProductsHandlerTest {
     assertEquals("GET https://www.google.com null", result);
   }
 
-  // @Disabled
+  @Disabled
   @Test
   void logOutputTestAlternative() {
     HttpExchange exchange = mock(HttpExchange.class);
