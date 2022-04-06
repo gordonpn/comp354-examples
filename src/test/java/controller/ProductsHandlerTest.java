@@ -42,7 +42,8 @@ class ProductsHandlerTest {
   private final PrintStream originalErr = System.err;
 
   @BeforeEach
-  void setUp() {}
+  void setUp() {
+  }
 
   @AfterEach
   void tearDown() {
@@ -82,7 +83,7 @@ class ProductsHandlerTest {
     controllerHelper.verify(() -> logResponse(exchange), times(1));
   }
 
-  @Disabled
+  // @Disabled
   @Test
   void logOutputTest() {
     HttpExchange exchange = mock(HttpExchange.class);
@@ -100,7 +101,7 @@ class ProductsHandlerTest {
     assertEquals("GET https://www.google.com null", result);
   }
 
-  @Disabled
+  // @Disabled
   @Test
   void logOutputTestAlternative() {
     HttpExchange exchange = mock(HttpExchange.class);
@@ -129,16 +130,15 @@ class ProductsHandlerTest {
 
     ProductRepository productRepository = spy(ProductRepository.class);
 
-    ProductsHandler productsHandler =
-        mock(
-            ProductsHandler.class,
-            withSettings().useConstructor(productRepository).defaultAnswer(CALLS_REAL_METHODS));
+    ProductsHandler productsHandler = mock(
+        ProductsHandler.class,
+        withSettings().useConstructor(productRepository).defaultAnswer(CALLS_REAL_METHODS));
     productsHandler.handle(exchange);
 
     verify(productsHandler, times(1)).handleOneProduct(exchange, "nike");
-//        verify(productsHandler, never()).handleOneProduct(exchange, "nike");
+    // verify(productsHandler, never()).handleOneProduct(exchange, "nike");
     verify(productRepository, atMost(1)).getByName("nike");
-    //    verify(productRepository, never()).getByName("nike");
+    // verify(productRepository, never()).getByName("nike");
     verify(productRepository, never()).getAll();
   }
 
@@ -189,7 +189,8 @@ class ProductsHandlerTest {
     }
 
     @Override
-    public void close() {}
+    public void close() {
+    }
 
     @Override
     public InputStream getRequestBody() {
@@ -202,7 +203,8 @@ class ProductsHandlerTest {
     }
 
     @Override
-    public void sendResponseHeaders(int rCode, long responseLength) {}
+    public void sendResponseHeaders(int rCode, long responseLength) {
+    }
 
     @Override
     public InetSocketAddress getRemoteAddress() {
@@ -230,10 +232,12 @@ class ProductsHandlerTest {
     }
 
     @Override
-    public void setAttribute(String name, Object value) {}
+    public void setAttribute(String name, Object value) {
+    }
 
     @Override
-    public void setStreams(InputStream i, OutputStream o) {}
+    public void setStreams(InputStream i, OutputStream o) {
+    }
 
     @Override
     public HttpPrincipal getPrincipal() {
