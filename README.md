@@ -47,3 +47,9 @@ _[Software Testing slides](https://docs.google.com/presentation/d/1SyqV9aejTdqUR
 [COMP 354 Lab Week 12 - Technical Debt](https://youtu.be/vSHCaLfxmGE)
 
 _[Technical Debt slides](https://docs.google.com/presentation/d/19lLDrkU4BhkUl6MLEXuEWm39G5SqgCMjrc6EE9MoNqw/edit?usp=sharing)_
+
+[COMP 354 Lab Week 13 - Refactoring, DevOps](https://youtu.be/AMXOnUT2yHQ)
+
+_[Refactoring slides](https://docs.google.com/presentation/d/1nJsWonK_6hFXXXsuYm1dAtXpGaug4m8waAXYxler2vw/edit?usp=sharing)_
+
+_[DevOps slides](https://docs.google.com/presentation/d/1R3Io1nNHLQMHbSd4mcciSQY007FFZB7GSsH7kZYnCFw/edit?usp=sharing)_
